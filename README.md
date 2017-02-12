@@ -1,4 +1,5 @@
 # Algorithms
+[![Build Status](https://travis-ci.org/nmuzychuk/algorithms.svg?branch=master)](https://travis-ci.org/nmuzychuk/algorithms)
 
 ## Overview
 Implementation of algorithms
