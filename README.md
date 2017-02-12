@@ -1,4 +1,5 @@
 # Data Structures
+[![Build Status](https://travis-ci.org/nmuzychuk/data-structures.svg?branch=master)](https://travis-ci.org/nmuzychuk/data-structures)
 
 ## Overview
 Implementation of data structures
