@@ -6,6 +6,7 @@ Implementation of data structures
 - Stack
 - Queue
 - Priority queue
+- Linked list
 
 ## License
 This project is released under the [MIT License](LICENSE.txt)
