@@ -7,10 +7,12 @@ class PriorityQueueArray {
     PriorityQueueArray() {
         final int maxSize = 64;
         queue = new int[maxSize];
-        headIndex = tailIndex = size = 0;
+        headIndex = 0;
+        tailIndex = 0;
+        size = 0;
     }
 
-    boolean add(int item) {
+    boolean add(final int item) {
         int i;
 
         if (tailIndex == 0) {

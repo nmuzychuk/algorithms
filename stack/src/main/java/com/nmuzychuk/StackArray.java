@@ -10,7 +10,7 @@ class StackArray {
         topIndex = -1;
     }
 
-    void push(int item) {
+    void push(final int item) {
         stack[++topIndex] = item;
     }
 

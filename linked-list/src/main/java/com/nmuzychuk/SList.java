@@ -11,7 +11,7 @@ public class SList {
         return (head == null);
     }
 
-    public void addFirst(Object item) {
+    public void addFirst(final Object item) {
         if (isEmpty()) {
             head = new SListNode(item);
         } else {
@@ -21,7 +21,7 @@ public class SList {
         }
     }
 
-    public void addLast(Object item) {
+    public void addLast(final Object item) {
         if (isEmpty()) {
             head = new SListNode(item);
         } else {

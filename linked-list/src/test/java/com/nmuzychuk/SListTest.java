@@ -25,51 +25,55 @@ public class SListTest {
 
     @Test
     public void testAddFirst() {
-        sList.addFirst(10);
+        sList.addFirst("listData");
 
-        assertEquals(10, sList.element());
+        assertEquals("listData", sList.element());
         assertEquals(1, sList.size());
         assertFalse(sList.isEmpty());
     }
 
     @Test
     public void testAddLast() {
-        sList.addLast(10);
+        sList.addLast("listData");
 
-        assertEquals(10, sList.element());
+        assertEquals("listData", sList.element());
         assertEquals(1, sList.size());
         assertFalse(sList.isEmpty());
     }
 
     @Test
     public void testRemoveFirst() {
-        sList.addFirst(10);
-        sList.addFirst(11);
+        sList.addFirst("listData1");
+        sList.addFirst("listData2");
 
-        assertEquals(11, sList.removeFirst());
+        assertEquals("listData2", sList.removeFirst());
         assertEquals(1, sList.size());
         assertFalse(sList.isEmpty());
     }
 
     @Test
     public void testRemoveLast() {
-        sList.addFirst(10);
-        sList.addFirst(11);
+        sList.addFirst("listData1");
+        sList.addFirst("listData2");
 
-        assertEquals(10, sList.removeLast());
+        assertEquals("listData1", sList.removeLast());
         assertEquals(1, sList.size());
         assertFalse(sList.isEmpty());
     }
 
     @Test
     public void testComplex() {
-        for (int i = 0; i < 100; i++) {
+        final int times = 100;
+        final int expectedFirstItem = 98;
+        final int expectedSize = 99;
+
+        for (int i = 0; i < times; i++) {
             sList.addFirst(i);
         }
         sList.removeFirst();
 
-        assertEquals(98, sList.element());
-        assertEquals(99, sList.size());
+        assertEquals(expectedFirstItem, sList.element());
+        assertEquals(expectedSize, sList.size());
     }
 
     @Test

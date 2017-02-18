@@ -7,10 +7,12 @@ class QueueArray {
     QueueArray() {
         final int maxSize = 64;
         queue = new int[maxSize];
-        headIndex = tailIndex = size = 0;
+        headIndex = 0;
+        tailIndex = 0;
+        size = 0;
     }
 
-    boolean add(int item) {
+    boolean add(final int item) {
         queue[tailIndex++] = item;
         size++;
         return true;

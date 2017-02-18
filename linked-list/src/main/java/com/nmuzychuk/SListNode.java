@@ -4,7 +4,7 @@ public class SListNode {
     private Object item;
     private SListNode next;
 
-    SListNode(Object item) {
+    SListNode(final Object item) {
         this.item = item;
     }
 
@@ -12,7 +12,7 @@ public class SListNode {
         return item;
     }
 
-    public void setItem(Object item) {
+    public void setItem(final Object item) {
         this.item = item;
     }
 
@@ -20,7 +20,7 @@ public class SListNode {
         return next;
     }
 
-    public void setNext(SListNode next) {
+    public void setNext(final SListNode next) {
         this.next = next;
     }
 }
