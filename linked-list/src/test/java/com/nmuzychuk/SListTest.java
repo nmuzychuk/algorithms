@@ -25,19 +25,31 @@ public class SListTest {
 
     @Test
     public void testAddFirst() {
-        sList.addFirst("listData");
+        sList.addFirst("listData1");
 
-        assertEquals("listData", sList.element());
+        assertEquals("listData1", sList.element());
         assertEquals(1, sList.size());
+        assertFalse(sList.isEmpty());
+
+        sList.addFirst("listData2");
+
+        assertEquals("listData2", sList.element());
+        assertEquals(2, sList.size());
         assertFalse(sList.isEmpty());
     }
 
     @Test
     public void testAddLast() {
-        sList.addLast("listData");
+        sList.addLast("listData1");
 
-        assertEquals("listData", sList.element());
+        assertEquals("listData1", sList.element());
         assertEquals(1, sList.size());
+        assertFalse(sList.isEmpty());
+
+        sList.addLast("listData2");
+
+        assertEquals("listData1", sList.element());
+        assertEquals(2, sList.size());
         assertFalse(sList.isEmpty());
     }
 
@@ -49,6 +61,10 @@ public class SListTest {
         assertEquals("listData2", sList.removeFirst());
         assertEquals(1, sList.size());
         assertFalse(sList.isEmpty());
+
+        assertEquals("listData1", sList.removeFirst());
+        assertEquals(0, sList.size());
+        assertTrue(sList.isEmpty());
     }
 
     @Test
@@ -59,33 +75,41 @@ public class SListTest {
         assertEquals("listData1", sList.removeLast());
         assertEquals(1, sList.size());
         assertFalse(sList.isEmpty());
-    }
 
-    @Test
-    public void testComplex() {
-        final int times = 100;
-        final int expectedFirstItem = 98;
-        final int expectedSize = 99;
-
-        for (int i = 0; i < times; i++) {
-            sList.addFirst(i);
-        }
-        sList.removeFirst();
-
-        assertEquals(expectedFirstItem, sList.element());
-        assertEquals(expectedSize, sList.size());
+        assertEquals("listData2", sList.removeLast());
+        assertEquals(0, sList.size());
+        assertTrue(sList.isEmpty());
     }
 
     @Test
     public void testCompare() {
         LinkedList<String> list = new LinkedList<String>();
-        String item = "data";
+        String item1 = "data1";
+        String item2 = "data2";
 
-        sList.addFirst(item);
-        list.addFirst(item);
+        sList.addLast(item1);
+        list.addLast(item1);
 
         assertEquals(list.element(), sList.element());
         assertEquals(list.size(), sList.size());
-        assertEquals(list.removeFirst(), sList.removeFirst());
+
+        sList.addFirst(item2);
+        list.addFirst(item2);
+
+        assertEquals(list.element(), sList.element());
+        assertEquals(list.size(), sList.size());
+
+        sList.removeFirst();
+        list.removeFirst();
+
+        assertEquals(list.element(), sList.element());
+        assertEquals(list.size(), sList.size());
+
+        System.out.printf("%s, %s", sList.size(), sList.element());
+
+        sList.removeLast();
+        list.removeLast();
+
+        assertEquals(list.size(), sList.size());
     }
 }

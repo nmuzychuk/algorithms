@@ -5,8 +5,14 @@
 Implementation of data structures
 - Stack
 - Queue
-- Priority queue
-- Linked list
+- Priority Queue
+- Linked List
+
+## Test
+Run JUnit tests
+```bash
+mvn test
+```
 
 ## License
 This project is released under the [MIT License](LICENSE.txt)

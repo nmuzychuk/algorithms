@@ -1,9 +1,9 @@
 package com.nmuzychuk;
 
-public class SList {
-    private SListNode head;
+public class DList {
+    private DListNode head;
 
-    SList() {
+    DList() {
         this.head = null;
     }
 
@@ -13,30 +13,33 @@ public class SList {
 
     public void addFirst(final Object item) {
         if (isEmpty()) {
-            head = new SListNode(item);
+            head = new DListNode(item);
         } else {
-            SListNode oldHead = head;
-            head = new SListNode(item);
+            DListNode oldHead = head;
+            head = new DListNode(item);
             head.setNext(oldHead);
+            oldHead.setPrevious(head);
         }
     }
 
     public void addLast(final Object item) {
         if (isEmpty()) {
-            head = new SListNode(item);
+            head = new DListNode(item);
         } else {
-            SListNode current = head;
+            DListNode current = head;
 
             while (current.next() != null) {
                 current = current.next();
             }
-            SListNode node = new SListNode(item);
+            DListNode node = new DListNode(item);
             current.setNext(node);
+            node.setPrevious(current);
         }
     }
 
     public Object removeFirst() {
         Object result = head.item();
+        head.setPrevious(null);
         head = head.next();
 
         return result;
@@ -49,7 +52,7 @@ public class SList {
 
             return result;
         } else {
-            SListNode current = head;
+            DListNode current = head;
 
             while (current.next().next() != null) {
                 current = current.next();
@@ -64,7 +67,7 @@ public class SList {
 
     public int size() {
         int count = 0;
-        SListNode current = head;
+        DListNode current = head;
 
         while (current != null) {
             current = current.next();
