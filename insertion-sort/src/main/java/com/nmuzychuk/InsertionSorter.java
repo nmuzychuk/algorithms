@@ -1,7 +1,10 @@
 package com.nmuzychuk;
 
-class InsertionSorter {
-    static void sort(int[] array) {
+public final class InsertionSorter {
+    private InsertionSorter() {
+    }
+
+    public static void sort(final int[] array) {
         int size = array.length;
 
         for (int i = 1; i < size; i++) {

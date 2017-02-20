@@ -1,7 +1,10 @@
 package com.nmuzychuk;
 
-class SelectionSorter {
-    static void sort(int[] array) {
+public final class SelectionSorter {
+    private SelectionSorter() {
+    }
+
+    public static void sort(final int[] array) {
         int size = array.length;
 
         for (int i = 0; i < size; i++) {

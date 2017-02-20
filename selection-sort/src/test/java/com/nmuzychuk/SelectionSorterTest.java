@@ -12,7 +12,7 @@ public class SelectionSorterTest extends TestCase {
         SelectionSorter.sort(a1);
         Arrays.sort(a2);
 
-        assert(Arrays.equals(a1, a2));
+        assert (Arrays.equals(a1, a2));
     }
 
     public void testOneElementArray() {
@@ -22,7 +22,7 @@ public class SelectionSorterTest extends TestCase {
         SelectionSorter.sort(a1);
         Arrays.sort(a2);
 
-        assert(Arrays.equals(a1, a2));
+        assert (Arrays.equals(a1, a2));
     }
 
     public void testTwoElementsArray() {
@@ -32,16 +32,16 @@ public class SelectionSorterTest extends TestCase {
         SelectionSorter.sort(a1);
         Arrays.sort(a2);
 
-        assert(Arrays.equals(a1, a2));
+        assert (Arrays.equals(a1, a2));
     }
 
     public void testFewElementsArray() {
-        int[] a1 = {8, 5, 0, -1, 4};
+        int[] a1 = {1, 0, -1};
         int[] a2 = a1.clone();
 
         SelectionSorter.sort(a1);
         Arrays.sort(a2);
 
-        assert(Arrays.equals(a1, a2));
+        assert (Arrays.equals(a1, a2));
     }
 }

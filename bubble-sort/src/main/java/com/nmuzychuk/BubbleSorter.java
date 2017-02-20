@@ -1,7 +1,10 @@
 package com.nmuzychuk;
 
-class BubbleSorter {
-    static void sort(int[] array) {
+public final class BubbleSorter {
+    private BubbleSorter() {
+    }
+
+    public static void sort(final int[] array) {
         int size = array.length;
 
         for (int i = size - 1; i >= 1; i--) {
