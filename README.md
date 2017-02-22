@@ -9,6 +9,7 @@ Implementation of algorithms
     - Insertion sort
 - Search
     - Linear search
+    - Binary search
 
 ## Test
 Run JUnit tests

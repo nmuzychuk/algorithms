@@ -17,6 +17,7 @@
         <module>selection-sort</module>
         <module>insertion-sort</module>
         <module>linear-search</module>
+        <module>binary-search</module>
     </modules>
 
     <build>
