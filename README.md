@@ -5,8 +5,9 @@
 Implementation of data structures
 - Stack
 - Queue
-- Priority Queue
-- Linked List
+- Priority queue
+- Linked list
+- Doubly linked list
 
 ## Test
 Run JUnit tests
