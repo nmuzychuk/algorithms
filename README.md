@@ -3,9 +3,12 @@
 
 ## Overview
 Implementation of algorithms
-- Bubble Sort
-- Selection Sort
-- Insertion Sort
+- Sorting
+    - Bubble sort
+    - Selection sort
+    - Insertion sort
+- Search
+    - Linear search
 
 ## Test
 Run JUnit tests
