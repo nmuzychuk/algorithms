@@ -7,6 +7,7 @@ Implementation of algorithms
     - Bubble sort
     - Selection sort
     - Insertion sort
+    - Merge sort
 - Search
     - Linear search
     - Binary search

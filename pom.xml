@@ -18,6 +18,7 @@
         <module>insertion-sort</module>
         <module>linear-search</module>
         <module>binary-search</module>
+        <module>merge-sort</module>
     </modules>
 
     <build>
