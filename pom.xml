@@ -18,6 +18,7 @@
         <module>priority-queue</module>
         <module>linked-list</module>
         <module>doubly-linked-list</module>
+        <module>binary-search-tree</module>
     </modules>
 
     <build>

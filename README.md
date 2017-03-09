@@ -8,6 +8,7 @@ Implementation of data structures
 - Priority queue
 - Linked list
 - Doubly linked list
+- Binary search tree
 
 ## Test
 Run JUnit tests
