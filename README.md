@@ -9,6 +9,7 @@ Implementation of data structures
 - Linked list
 - Doubly linked list
 - Binary search tree
+- Hash table
 
 ## Test
 Run JUnit tests
