@@ -1,32 +1,29 @@
 package com.nmuzychuk;
 
-class StackArray {
-    private int topIndex;
-    private int[] stack;
+public class StackArray<T> {
+    private int topIndex = -1;
+    private T[] stack;
 
-    StackArray() {
-        final int size = 64;
-        stack = new int[size];
-        topIndex = -1;
+    public StackArray() {
+        stack = (T[]) new Object[Byte.MAX_VALUE];
     }
 
-    void push(final int item) {
+    public void push(final T item) {
         stack[++topIndex] = item;
     }
 
-    int pop() {
-        return stack[topIndex--];
+    public T pop() {
+        T result = stack[topIndex];
+        stack[topIndex--] = null;
+
+        return result;
     }
 
-    int peek() {
+    public T peek() {
         return stack[topIndex];
     }
 
-    boolean empty() {
-        return topIndex == -1;
-    }
-
-    int size() {
+    public int size() {
         return topIndex + 1;
     }
 }

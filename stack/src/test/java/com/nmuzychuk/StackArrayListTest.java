@@ -6,10 +6,10 @@ import static org.junit.Assert.assertEquals;
 
 import java.util.Stack;
 
-public class StackArrayTest {
+public class StackArrayListTest {
     @Test
     public void testInteger() {
-        StackArray<Integer> s1 = new StackArray<Integer>();
+        StackArrayList<Integer> s1 = new StackArrayList<Integer>();
         Stack<Integer> s2 = new Stack<Integer>();
 
         final int pushTimes = 5;
@@ -30,7 +30,7 @@ public class StackArrayTest {
 
     @Test
     public void testString() {
-        StackArray<String> s1 = new StackArray<String>();
+        StackArrayList<String> s1 = new StackArrayList<String>();
         Stack<String> s2 = new Stack<String>();
 
         final String[] words = {"foo", "bar", "baz"};
