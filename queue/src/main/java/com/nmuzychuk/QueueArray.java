@@ -1,34 +1,28 @@
 package com.nmuzychuk;
 
-class QueueArray {
-    private int headIndex, tailIndex, size;
-    private int[] queue;
+class QueueArray<T> {
+    private int headIndex, tailIndex = 0;
+    private T[] queue;
 
     QueueArray() {
-        final int maxSize = 64;
-        queue = new int[maxSize];
-        headIndex = 0;
-        tailIndex = 0;
-        size = 0;
+        queue = (T[]) new Object[Byte.MAX_VALUE];
     }
 
-    boolean add(final int item) {
+    boolean add(final T item) {
         queue[tailIndex++] = item;
-        size++;
         return true;
     }
 
-    int remove() {
-        int item = queue[headIndex++];
-        size--;
+    T remove() {
+        T item = queue[headIndex++];
         return item;
     }
 
-    int element() {
+    T element() {
         return queue[headIndex];
     }
 
     int size() {
-        return size;
+        return tailIndex - headIndex;
     }
 }

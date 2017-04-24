@@ -7,12 +7,12 @@ import java.util.concurrent.LinkedBlockingQueue;
 import static org.junit.Assert.assertEquals;
 import static org.junit.Assert.assertTrue;
 
-public class QueueArrayTest {
+public class QueueArrayListTest {
     @Test
     public void testInteger() {
         final int addTimes = 5;
 
-        QueueArray<Integer> q1 = new QueueArray<Integer>();
+        QueueArrayList<Integer> q1 = new QueueArrayList<Integer>();
         LinkedBlockingQueue<Integer> q2 = new LinkedBlockingQueue<Integer>();
 
         for (int i = 0; i < addTimes; i++) {
@@ -33,7 +33,7 @@ public class QueueArrayTest {
     public void testString() {
         final String[] words = {"foo", "bar", "baz"};
 
-        QueueArray<String> q1 = new QueueArray<String>();
+        QueueArrayList<String> q1 = new QueueArrayList<String>();
         LinkedBlockingQueue<String> q2 = new LinkedBlockingQueue<String>();
 
         for (String word : words) {
