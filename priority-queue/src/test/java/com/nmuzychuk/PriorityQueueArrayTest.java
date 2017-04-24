@@ -1,49 +1,31 @@
 package com.nmuzychuk;
 
-import junit.framework.TestCase;
+import org.junit.Test;
 
-public class PriorityQueueArrayTest
-        extends TestCase {
+import java.util.PriorityQueue;
 
-    public void testEmpty() {
-        PriorityQueueArray q = new PriorityQueueArray();
+import static org.junit.Assert.assertEquals;
+import static org.junit.Assert.assertTrue;
 
-        assertEquals(0, q.size());
-    }
+public class PriorityQueueArrayTest {
+    @Test
+    public void testInteger() {
+        int[] elements = {0, 2, -1, 1};
 
-    public void testAdd() {
-        final int item = 42;
-        PriorityQueueArray q = new PriorityQueueArray();
+        PriorityQueueArray q1 = new PriorityQueueArray();
+        PriorityQueue<Integer> q2 = new PriorityQueue<Integer>();
 
-        q.add(item);
-
-        assertEquals(item, q.element());
-        assertEquals(1, q.size());
-    }
-
-    public void testRemove() {
-        final int item = 42;
-        PriorityQueueArray q = new PriorityQueueArray();
-
-        q.add(item);
-
-        assertEquals(item, q.remove());
-        assertEquals(0, q.size());
-    }
-
-    public void testComplex() {
-        final int times = 10;
-        final int topPriorityElement = 1;
-        int i;
-
-        PriorityQueueArray q = new PriorityQueueArray();
-
-        for (i = times; i >= topPriorityElement; i--) {
-            q.add(i);
+        for (int element : elements) {
+            assertTrue(q1.add(element));
+            q2.add(element);
         }
 
-        assertEquals(topPriorityElement, q.element());
-        assertEquals(topPriorityElement, q.remove());
-        assertEquals(times - 1, q.size());
+        assertEquals(q2.size(), q1.size());
+        assertEquals(q2.element(), (Integer) q1.element());
+
+        assertEquals(q2.remove(), (Integer) q1.remove());
+
+        assertEquals(q2.size(), q1.size());
+        assertEquals(q2.element(), (Integer) q1.element());
     }
 }

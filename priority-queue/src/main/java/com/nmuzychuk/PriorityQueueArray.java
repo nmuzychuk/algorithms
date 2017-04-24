@@ -1,15 +1,12 @@
 package com.nmuzychuk;
 
 class PriorityQueueArray {
-    private int headIndex, tailIndex, size;
+    private int headIndex = 0;
+    private int tailIndex = 0;
     private int[] queue;
 
     PriorityQueueArray() {
-        final int maxSize = 64;
-        queue = new int[maxSize];
-        headIndex = 0;
-        tailIndex = 0;
-        size = 0;
+        queue = new int[Byte.MAX_VALUE];
     }
 
     boolean add(final int item) {
@@ -22,7 +19,6 @@ class PriorityQueueArray {
                 if (item < queue[i]) {
                     queue[i + 1] = queue[i];
                 } else {
-
                     break;
                 }
             }
@@ -30,14 +26,11 @@ class PriorityQueueArray {
             queue[i + 1] = item;
             tailIndex++;
         }
-        size++;
         return true;
     }
 
     int remove() {
-        int item = queue[headIndex++];
-        size--;
-        return item;
+        return queue[headIndex++];
     }
 
     int element() {
@@ -45,6 +38,6 @@ class PriorityQueueArray {
     }
 
     int size() {
-        return size;
+        return tailIndex - headIndex;
     }
 }
