@@ -1,39 +1,53 @@
 package com.nmuzychuk;
 
-import static org.junit.Assert.assertEquals;
-
-import org.junit.Before;
 import org.junit.Test;
 
+import static org.junit.Assert.assertEquals;
+
 public class SListNodeTest {
-    private SListNode node1;
-
-    @Before
-    public void init() {
-        node1 = new SListNode("data1");
-    }
-
     @Test
-    public void testItem() {
-        assertEquals("data1", node1.item());
-    }
+    public void testInteger() {
+        final Integer item1 = 1;
+        final Integer item2 = 2;
+        final Integer newItem1 = 0;
 
-    @Test
-    public void testNext() {
+        SListNode<Integer> node1 = new SListNode<Integer>(item1);
+        SListNode<Integer> node2 = new SListNode<Integer>(item2);
+
+        assertEquals(item1, node1.item());
         assertEquals(null, node1.next());
+
+        assertEquals(item2, node2.item());
+        assertEquals(null, node2.next());
+
+        node1.setItem(newItem1);
+
+        assertEquals(newItem1, node1.item());
+
+        node1.setNext(node2);
+
+        assertEquals(node2, node1.next());
     }
 
     @Test
-    public void testSetItem() {
-        String s = "newData1";
-        node1.setItem(s);
+    public void testString() {
+        final String item1 = "foo";
+        final String item2 = "bar";
+        final String newItem1 = "baz";
 
-        assertEquals(s, node1.item());
-    }
+        SListNode<String> node1 = new SListNode<String>(item1);
+        SListNode<String> node2 = new SListNode<String>(item2);
 
-    @Test
-    public void testSetNext() {
-        SListNode node2 = new SListNode("data2");
+        assertEquals(item1, node1.item());
+        assertEquals(null, node1.next());
+
+        assertEquals(item2, node2.item());
+        assertEquals(null, node2.next());
+
+        node1.setItem(newItem1);
+
+        assertEquals(newItem1, node1.item());
+
         node1.setNext(node2);
 
         assertEquals(node2, node1.next());

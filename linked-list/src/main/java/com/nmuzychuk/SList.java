@@ -1,61 +1,57 @@
 package com.nmuzychuk;
 
-public class SList {
-    private SListNode head;
-
-    SList() {
-        this.head = null;
-    }
+public class SList<T> {
+    private SListNode<T> head;
 
     public boolean isEmpty() {
         return (head == null);
     }
 
-    public void addFirst(final Object item) {
+    public void addFirst(final T item) {
         if (isEmpty()) {
-            head = new SListNode(item);
+            head = new SListNode<T>(item);
         } else {
-            SListNode oldHead = head;
-            head = new SListNode(item);
+            SListNode<T> oldHead = head;
+            head = new SListNode<T>(item);
             head.setNext(oldHead);
         }
     }
 
-    public void addLast(final Object item) {
+    public void addLast(final T item) {
         if (isEmpty()) {
-            head = new SListNode(item);
+            head = new SListNode<T>(item);
         } else {
-            SListNode current = head;
+            SListNode<T> current = head;
 
             while (current.next() != null) {
                 current = current.next();
             }
-            SListNode node = new SListNode(item);
+            SListNode<T> node = new SListNode<T>(item);
             current.setNext(node);
         }
     }
 
-    public Object removeFirst() {
-        Object result = head.item();
+    public T removeFirst() {
+        T result = head.item();
         head = head.next();
 
         return result;
     }
 
-    public Object removeLast() {
+    public T removeLast() {
         if (head.next() == null) {
-            Object result = head.item();
+            T result = head.item();
             head = null;
 
             return result;
         } else {
-            SListNode current = head;
+            SListNode<T> current = head;
 
             while (current.next().next() != null) {
                 current = current.next();
             }
 
-            Object result = current.next().item();
+            T result = current.next().item();
             current.setNext(null);
 
             return result;
@@ -64,7 +60,7 @@ public class SList {
 
     public int size() {
         int count = 0;
-        SListNode current = head;
+        SListNode<T> current = head;
 
         while (current != null) {
             current = current.next();
@@ -73,7 +69,7 @@ public class SList {
         return count;
     }
 
-    public Object element() {
+    public T element() {
         return head.item();
     }
 }

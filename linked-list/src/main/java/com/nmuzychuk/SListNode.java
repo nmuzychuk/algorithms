@@ -1,26 +1,26 @@
 package com.nmuzychuk;
 
-public class SListNode {
-    private Object item;
-    private SListNode next;
+public class SListNode<T> {
+    private T item;
+    private SListNode<T> next;
 
-    SListNode(final Object item) {
+    SListNode(final T item) {
         this.item = item;
     }
 
-    public Object item() {
+    public T item() {
         return item;
     }
 
-    public void setItem(final Object item) {
+    public void setItem(final T item) {
         this.item = item;
     }
 
-    public SListNode next() {
+    public SListNode<T> next() {
         return next;
     }
 
-    public void setNext(final SListNode next) {
+    public void setNext(final SListNode<T> next) {
         this.next = next;
     }
 }
