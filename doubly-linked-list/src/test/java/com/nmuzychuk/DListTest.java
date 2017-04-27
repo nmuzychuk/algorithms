@@ -1,113 +1,73 @@
 package com.nmuzychuk;
 
-import static org.junit.Assert.assertEquals;
-import static org.junit.Assert.assertFalse;
-import static org.junit.Assert.assertTrue;
-
-import org.junit.Before;
 import org.junit.Test;
 
 import java.util.LinkedList;
 
+import static org.junit.Assert.assertEquals;
+
 public class DListTest {
-    private DList dList;
+    @Test
+    public void testInteger() {
+        final Integer item1 = 1;
+        final Integer item2 = 2;
 
-    @Before
-    public void init() {
-        dList = new DList();
+        DList<Integer> list1 = new DList<Integer>();
+        LinkedList<Integer> list2 = new LinkedList<Integer>();
+
+        list1.addLast(item1);
+        list2.addLast(item1);
+
+        assertEquals(list2.element(), list1.element());
+        assertEquals(list2.size(), list1.size());
+
+        list1.addFirst(item2);
+        list2.addFirst(item2);
+
+        assertEquals(list2.element(), list1.element());
+        assertEquals(list2.size(), list1.size());
+
+        list1.removeFirst();
+        list2.removeFirst();
+
+        assertEquals(list2.element(), list1.element());
+        assertEquals(list2.size(), list1.size());
+
+        list1.removeLast();
+        list2.removeLast();
+
+        assertEquals(list2.size(), list1.size());
     }
 
     @Test
-    public void testConstructor() {
-        assertEquals(0, dList.size());
-        assertTrue(dList.isEmpty());
-    }
+    public void testString() {
+        final String item1 = "foo";
+        final String item2 = "bar";
 
-    @Test
-    public void testAddFirst() {
-        dList.addFirst("listData1");
+        DList<String> list1 = new DList<String>();
+        LinkedList<String> list2 = new LinkedList<String>();
 
-        assertEquals("listData1", dList.element());
-        assertEquals(1, dList.size());
-        assertFalse(dList.isEmpty());
+        list1.addLast(item1);
+        list2.addLast(item1);
 
-        dList.addFirst("listData2");
+        assertEquals(list2.element(), list1.element());
+        assertEquals(list2.size(), list1.size());
 
-        assertEquals("listData2", dList.element());
-        assertEquals(2, dList.size());
-        assertFalse(dList.isEmpty());
-    }
+        list1.addFirst(item2);
+        list2.addFirst(item2);
 
-    @Test
-    public void testAddLast() {
-        dList.addLast("listData1");
+        assertEquals(list2.element(), list1.element());
+        assertEquals(list2.size(), list1.size());
 
-        assertEquals("listData1", dList.element());
-        assertEquals(1, dList.size());
-        assertFalse(dList.isEmpty());
+        list1.removeFirst();
+        list2.removeFirst();
 
-        dList.addLast("listData2");
+        assertEquals(list2.element(), list1.element());
+        assertEquals(list2.size(), list1.size());
 
-        assertEquals("listData1", dList.element());
-        assertEquals(2, dList.size());
-        assertFalse(dList.isEmpty());
-    }
+        list1.removeLast();
+        list2.removeLast();
 
-    @Test
-    public void testRemoveFirst() {
-        dList.addFirst("listData1");
-        dList.addFirst("listData2");
-
-        assertEquals("listData2", dList.removeFirst());
-        assertEquals(1, dList.size());
-        assertFalse(dList.isEmpty());
-
-        assertEquals("listData1", dList.removeFirst());
-        assertEquals(0, dList.size());
-        assertTrue(dList.isEmpty());
-    }
-
-    @Test
-    public void testRemoveLast() {
-        dList.addFirst("listData1");
-        dList.addFirst("listData2");
-
-        assertEquals("listData1", dList.removeLast());
-        assertEquals(1, dList.size());
-        assertFalse(dList.isEmpty());
-
-        assertEquals("listData2", dList.removeLast());
-        assertEquals(0, dList.size());
-        assertTrue(dList.isEmpty());
-    }
-
-    @Test
-    public void testCompare() {
-        LinkedList<String> list = new LinkedList<String>();
-        String item1 = "data1";
-        String item2 = "data2";
-
-        dList.addLast(item1);
-        list.addLast(item1);
-
-        assertEquals(list.element(), dList.element());
-        assertEquals(list.size(), dList.size());
-
-        dList.addFirst(item2);
-        list.addFirst(item2);
-
-        assertEquals(list.element(), dList.element());
-        assertEquals(list.size(), dList.size());
-
-        dList.removeFirst();
-        list.removeFirst();
-
-        assertEquals(list.element(), dList.element());
-        assertEquals(list.size(), dList.size());
-
-        dList.removeLast();
-        list.removeLast();
-
-        assertEquals(list.size(), dList.size());
+        assertEquals(list2.size(), list1.size());
     }
 }

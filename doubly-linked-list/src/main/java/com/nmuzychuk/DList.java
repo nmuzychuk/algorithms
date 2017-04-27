@@ -1,7 +1,7 @@
 package com.nmuzychuk;
 
-public class DList {
-    private DListNode head;
+public class DList<T> {
+    private DListNode<T> head;
 
     DList() {
         this.head = null;
@@ -11,54 +11,54 @@ public class DList {
         return (head == null);
     }
 
-    public void addFirst(final Object item) {
+    public void addFirst(final T item) {
         if (isEmpty()) {
-            head = new DListNode(item);
+            head = new DListNode<T>(item);
         } else {
-            DListNode oldHead = head;
-            head = new DListNode(item);
+            DListNode<T> oldHead = head;
+            head = new DListNode<T>(item);
             head.setNext(oldHead);
             oldHead.setPrevious(head);
         }
     }
 
-    public void addLast(final Object item) {
+    public void addLast(final T item) {
         if (isEmpty()) {
-            head = new DListNode(item);
+            head = new DListNode<T>(item);
         } else {
-            DListNode current = head;
+            DListNode<T> current = head;
 
             while (current.next() != null) {
                 current = current.next();
             }
-            DListNode node = new DListNode(item);
+            DListNode<T> node = new DListNode<T>(item);
             current.setNext(node);
             node.setPrevious(current);
         }
     }
 
-    public Object removeFirst() {
-        Object result = head.item();
+    public T removeFirst() {
+        T result = head.item();
         head.setPrevious(null);
         head = head.next();
 
         return result;
     }
 
-    public Object removeLast() {
+    public T removeLast() {
         if (head.next() == null) {
-            Object result = head.item();
+            T result = head.item();
             head = null;
 
             return result;
         } else {
-            DListNode current = head;
+            DListNode<T> current = head;
 
             while (current.next().next() != null) {
                 current = current.next();
             }
 
-            Object result = current.next().item();
+            T result = current.next().item();
             current.setNext(null);
 
             return result;
@@ -67,7 +67,7 @@ public class DList {
 
     public int size() {
         int count = 0;
-        DListNode current = head;
+        DListNode<T> current = head;
 
         while (current != null) {
             current = current.next();
@@ -76,7 +76,7 @@ public class DList {
         return count;
     }
 
-    public Object element() {
+    public T element() {
         return head.item();
     }
 }

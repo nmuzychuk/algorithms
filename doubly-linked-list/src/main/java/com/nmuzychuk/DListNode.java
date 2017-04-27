@@ -1,35 +1,35 @@
 package com.nmuzychuk;
 
-public class DListNode {
-    private Object item;
-    private DListNode previous;
-    private DListNode next;
+public class DListNode<T> {
+    private T item;
+    private DListNode<T> previous;
+    private DListNode<T> next;
 
-    DListNode(final Object item) {
+    DListNode(final T item) {
         this.item = item;
     }
 
-    public Object item() {
+    public T item() {
         return item;
     }
 
-    public void setItem(final Object item) {
+    public void setItem(final T item) {
         this.item = item;
     }
 
-    public DListNode previous() {
+    public DListNode<T> previous() {
         return previous;
     }
 
-    public void setPrevious(final DListNode previous) {
+    public void setPrevious(final DListNode<T> previous) {
         this.previous = previous;
     }
 
-    public DListNode next() {
+    public DListNode<T> next() {
         return next;
     }
 
-    public void setNext(final DListNode next) {
+    public void setNext(final DListNode<T> next) {
         this.next = next;
     }
 }
