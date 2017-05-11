@@ -19,6 +19,7 @@
         <module>linear-search</module>
         <module>binary-search</module>
         <module>merge-sort</module>
+        <module>knuth-shuffle</module>
     </modules>
 
     <build>

@@ -11,6 +11,8 @@ Implementation of algorithms
 - Search
     - Linear search
     - Binary search
+- Shuffling
+    - Fisher–Yates shuffle
 
 ## Test
 Run JUnit tests
