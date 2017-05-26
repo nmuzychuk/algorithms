@@ -16,8 +16,8 @@ Implementation of algorithms
 
 ## Test
 Run JUnit tests
-```bash
-mvn test
+```
+./mvnw test
 ```
 
 ## License
