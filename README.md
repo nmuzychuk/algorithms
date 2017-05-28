@@ -13,8 +13,8 @@ Implementation of data structures
 
 ## Test
 Run JUnit tests
-```bash
-mvn test
+```
+./mvnw test
 ```
 
 ## License
