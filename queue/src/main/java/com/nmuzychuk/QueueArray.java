@@ -8,21 +8,21 @@ class QueueArray<T> {
         queue = (T[]) new Object[Byte.MAX_VALUE];
     }
 
-    boolean add(final T item) {
+    public boolean add(final T item) {
         queue[tailIndex++] = item;
         return true;
     }
 
-    T remove() {
+    public T remove() {
         T item = queue[headIndex++];
         return item;
     }
 
-    T element() {
+    public T element() {
         return queue[headIndex];
     }
 
-    int size() {
+    public int size() {
         return tailIndex - headIndex;
     }
 }

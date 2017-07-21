@@ -9,7 +9,7 @@ class PriorityQueueArray {
         queue = new int[Byte.MAX_VALUE];
     }
 
-    boolean add(final int item) {
+    public boolean add(final int item) {
         int i;
 
         if (tailIndex == 0) {
@@ -29,15 +29,15 @@ class PriorityQueueArray {
         return true;
     }
 
-    int remove() {
+    public int remove() {
         return queue[headIndex++];
     }
 
-    int element() {
+    public int element() {
         return queue[headIndex];
     }
 
-    int size() {
+    public int size() {
         return tailIndex - headIndex;
     }
 }

@@ -82,7 +82,7 @@ public class BSTree {
         } else {
             BSTreeNode replacement = getReplacementNode(current);
 
-            if (current == root) {
+            if (current.equals(root)) {
                 // root node
                 if (root.left() != null) {
                     replacement.setLeft(root.left());

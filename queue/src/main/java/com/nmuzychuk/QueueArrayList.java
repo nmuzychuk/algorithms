@@ -6,20 +6,20 @@ public class QueueArrayList<T> {
     private int headIndex, tailIndex = 0;
     private ArrayList<T> queue = new ArrayList<T>();
 
-    boolean add(final T item) {
+    public boolean add(final T item) {
         queue.add(tailIndex++, item);
         return true;
     }
 
-    T remove() {
+    public T remove() {
         return queue.get(headIndex++);
     }
 
-    T element() {
+    public T element() {
         return queue.get(headIndex);
     }
 
-    int size() {
+    public int size() {
         return tailIndex - headIndex;
     }
 }
