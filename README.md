@@ -13,6 +13,7 @@ Implementation of algorithms
 - Search
     - Linear search
     - Binary search
+    - Ternary search
 - Shuffling
     - Fisher–Yates shuffle
 

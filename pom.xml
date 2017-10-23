@@ -20,6 +20,7 @@
         <module>binary-search</module>
         <module>merge-sort</module>
         <module>knuth-shuffle</module>
+        <module>ternary-search</module>
     </modules>
 
     <build>
