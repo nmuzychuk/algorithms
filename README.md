@@ -15,6 +15,7 @@ Implementation of algorithms
     - Binary search
     - Ternary search
 - Shuffling
+    - Naive shuffle
     - Fisher–Yates shuffle
 
 ## Test

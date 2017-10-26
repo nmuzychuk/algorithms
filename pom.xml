@@ -21,6 +21,7 @@
         <module>merge-sort</module>
         <module>knuth-shuffle</module>
         <module>ternary-search</module>
+        <module>naive-shuffle</module>
     </modules>
 
     <build>
