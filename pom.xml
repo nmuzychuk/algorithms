@@ -22,6 +22,7 @@
         <module>knuth-shuffle</module>
         <module>ternary-search</module>
         <module>naive-shuffle</module>
+        <module>bogosort</module>
     </modules>
 
     <build>
