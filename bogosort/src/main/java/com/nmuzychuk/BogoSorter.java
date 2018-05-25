@@ -2,9 +2,8 @@ package com.nmuzychuk;
 
 import java.util.concurrent.ThreadLocalRandom;
 
-public final class Bogosorter {
-
-    private Bogosorter() {
+public final class BogoSorter {
+    private BogoSorter() {
     }
 
     public static void sort(final int[] array) {
@@ -31,5 +30,4 @@ public final class Bogosorter {
             array[i] = temp;
         }
     }
-
 }
