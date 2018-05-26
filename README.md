@@ -11,6 +11,7 @@ Implementation of algorithms
     - Insertion sort
     - Merge sort
     - Bogosort
+    - Quicksort
 - Search
     - Linear search
     - Binary search

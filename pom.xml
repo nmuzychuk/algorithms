@@ -23,6 +23,7 @@
         <module>ternary-search</module>
         <module>naive-shuffle</module>
         <module>bogosort</module>
+        <module>quicksort</module>
     </modules>
 
     <build>
