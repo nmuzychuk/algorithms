@@ -24,6 +24,13 @@
         <module>naive-shuffle</module>
         <module>bogosort</module>
         <module>quicksort</module>
+        <module>stack</module>
+        <module>queue</module>
+        <module>priority-queue</module>
+        <module>linked-list</module>
+        <module>doubly-linked-list</module>
+        <module>binary-search-tree</module>
+        <module>hash-table</module>
     </modules>
 
     <build>
